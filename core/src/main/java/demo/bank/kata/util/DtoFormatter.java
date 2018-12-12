@@ -1,5 +1,6 @@
 package demo.bank.kata.util;
 
+import demo.bank.kata.dto.AccountDto;
 import demo.bank.kata.dto.HistoryItemDto;
 
 public class DtoFormatter {
@@ -18,5 +19,17 @@ public class DtoFormatter {
             historyItem.getCommentOperation(),
             historyItem.getDeltaBalance(),
             historyItem.getNewBalance());
+    }
+
+    public static String format(AccountDto account) {
+        if (account == null) {
+            return "";
+        }
+        return String.format("%-32s|%32s|%+16.2f|%4s",
+            account.getIdAccount(),
+            account.getIdHolder(),
+            account.getBalance(),
+            account.getCurrency());
+
     }
 }

@@ -1,5 +1,7 @@
 package demo.bank.kata.dto;
 
+import demo.bank.kata.util.DtoFormatter;
+
 import java.math.BigDecimal;
 import java.util.Currency;
 
@@ -50,5 +52,10 @@ public class AccountDto {
 
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
+    }
+
+    @Override
+    public String toString() {
+        return DtoFormatter.format(this);
     }
 }
